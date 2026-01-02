@@ -1,0 +1,189 @@
+main {
+  padding-top: 0;
+}
+
+/* ===== HERO ===== */
+.wedding-hero img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
+
+/* ===== INTRO ===== */
+.wedding-intro {
+  position: relative;
+  background: url("../assets/images/texture.jpg") center / cover;
+  padding: 2rem 2rem;
+}
+
+.wedding-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.75);
+}
+
+.wedding-intro > * {
+  position: relative;
+}
+
+.script-text {
+  font-family: "Brush Script MT", cursive;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.intro-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: end; /* 🔑 aligns bottoms */
+}
+
+.intro-copy p {
+  text-align: right;
+}
+
+
+.intro-heading {
+  grid-column: 2 / 3;
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+
+.intro-video iframe {
+  width: 100%;
+  height: 300px;
+}
+
+/* ===== SIGNATURE SERVICES ===== */
+.signature-services {
+  position: relative;
+  background: #012c0f;
+  color: #F9F6EE;
+  padding: 4rem 2rem;
+}
+
+.service-wrap {
+  position: relative;
+}
+
+.services-row {
+  position: relative; /* 🔑 ADD THIS */
+  padding-bottom: 40px; /* space for flag */
+  display: flex;
+  justify-content: center;
+  gap: 4.5rem; /* tighten spacing while we're here */
+}
+
+.service-item {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.service-item.active {
+  outline: 3px solid #FFD700;
+}
+
+.service-flag {
+  position: absolute;
+  top: calc(100% - 10px);
+
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 18px solid #0077ff;
+
+  transform: translateX(0);
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+
+
+.service-blurb-section {
+  background: #F9F6EE;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* ===== SERVICE COLLAPSE (Bootstrap-inspired) ===== */
+.service-collapse {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 
+    max-height 0.4s ease,
+    opacity 0.25s ease;
+}
+
+.service-collapse.show {
+  max-height: 200px; /* enough for text */
+  opacity: 1;
+}
+
+
+
+/* ===== GALLERY GRID ===== */
+.wedding-gallery {
+  padding: 4rem 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.gallery-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 9999; /* 🔑 raise this */
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  pointer-events: none;
+}
+
+.gallery-modal .arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  pointer-events: auto;
+}
+
+.arrow.left { left: 40px; }
+.arrow.right { right: 40px; }
+
+.gallery-modal .close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+

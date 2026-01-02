@@ -1,0 +1,87 @@
+/* ===== HERO ===== */
+.omni-hero img {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+/* ===== INTRO ===== */
+.omni-intro {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+}
+
+.omni-subtitle {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  text-transform: lowercase;
+  color: #333;
+}
+
+.script-text {
+  font-family: "Brush Script MT", cursive;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== FEATURES ===== */
+.omni-features {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.feature p {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.divider {
+  width: 1px;
+  height: 120px;
+  background: #ccc;
+}
+
+/* ===== PARTNER TEXTURE ===== */
+.omni-partner {
+  position: relative;
+  background: url("../assets/images/texture.jpg") center / cover no-repeat;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.omni-partner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(133, 132, 132, 0.08);
+}
+
+.omni-partner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.omni-partner h2 {
+  margin-bottom: 1.5rem;
+  color: rgb(0, 63, 93);
+  font-size: 1.4rem;
+}
+
+.omni-partner img {
+  width: 30%;
+}
