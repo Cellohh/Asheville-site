@@ -2,6 +2,13 @@ main {
   padding-top: 0;
 }
 
+body {
+  font-family: "ivymode", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #111;
+}
+
 /* ===== HERO ===== */
 .wedding-hero img {
   width: 100%;
@@ -20,7 +27,7 @@ main {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.75);
+  background: rgba(255, 255, 255, 0.462);
 }
 
 .wedding-intro > * {
@@ -28,8 +35,10 @@ main {
 }
 
 .script-text {
-  font-family: "Brush Script MT", cursive;
-  font-size: 3rem;
+  font-family: "aristelle-script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
   margin-bottom: 2rem;
 }
 
@@ -60,21 +69,32 @@ main {
 /* ===== SIGNATURE SERVICES ===== */
 .signature-services {
   position: relative;
-  background: #012c0f;
+  background: url("../assets/images/green_pattern.png") repeat;
   color: #F9F6EE;
   padding: 4rem 2rem;
 }
 
 .service-wrap {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 120px; /* keeps spacing consistent */
+}
+
+.service-wrap h3 {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #F9F6EE;
 }
 
 .services-row {
-  position: relative; /* 🔑 ADD THIS */
-  padding-bottom: 40px; /* space for flag */
   display: flex;
   justify-content: center;
-  gap: 4.5rem; /* tighten spacing while we're here */
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap; /* helps on smaller screens */
 }
 
 .service-item {
@@ -82,12 +102,40 @@ main {
   height: 70px;
   border-radius: 50%;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0px;
+  border-radius: 100px;
+
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.838);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.service-item:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+}
+
+.service-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    display: block;
+}
+
+
 .service-item.active {
-  outline: 3px solid #FFD700;
+  outline: 3px solid #F5F3E9;
+   box-shadow: 
+    0 6px 14px rgba(0,0,0,0.25),
+    0 0 10px rgba(201,163,86,0.4);
 }
 
 .service-flag {
@@ -133,6 +181,7 @@ main {
 /* ===== GALLERY GRID ===== */
 .wedding-gallery {
   padding: 4rem 2rem;
+  background-color: #F5F3E9;
 }
 
 .gallery-grid {

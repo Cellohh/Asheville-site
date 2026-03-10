@@ -6,7 +6,9 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "ivymode", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   color: #111;
 }
 
@@ -25,7 +27,8 @@ body {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #012c0f;
+  background: url("../assets/images/green_pattern.png") repeat;
+  /* background-color: #32412f; */
 }
 
 .nav-left {
@@ -52,16 +55,16 @@ body {
 .contact-btn {
   padding: 0.6rem 1.2rem;
   background: #F9F6EE;
-  box-shadow: -4px -4px 0 #999;
+  box-shadow: -4px -4px 0 #4D4D4F;
   text-decoration: none;
   color: black;
   font-weight: bold;
 }
 
 .contact-btn:hover {
-  background: #012c0f;
-  box-shadow: -4px -4px 0 #FFD700;
-  color: #FFD700;
+  background: #4D4D4F;
+  box-shadow: -4px -4px 0 #F4DCD3;
+  color: #F5F3E9;
 }
 
 /* ===== MAIN OFFSET ===== */
@@ -78,7 +81,7 @@ main {
 }
 
 .intro-image img {
-  width: 50%;
+  width: 55%;
   margin-left: 20%;
 }
 
@@ -177,7 +180,7 @@ main {
 /* ===== GALLERY ===== */
 
 .gallery-section {
-  background-color: #012c0f;
+  background: url("../assets/images/green_pattern.png") repeat;
   padding-bottom: 1%;
 }
 
@@ -226,7 +229,7 @@ main {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 0.50rem 2rem; /* was 3rem */
-  background: #111;
+  background: #4D4D4F;
   color: #F9F6EE;
 }
 
