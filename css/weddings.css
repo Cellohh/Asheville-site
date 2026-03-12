@@ -161,6 +161,50 @@ body {
   font-size: 1rem;
 }
 
+/* ===== WEDDING CTA BUTTON ===== */
+
+.planning-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.planning-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  background: #C9A356;
+  color: white;
+
+  border-radius: 3px;
+
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.planning-btn:hover {
+  background: #b89243;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+}
+
+/* ===== CTA DIVIDER ===== */
+
+.cta-divider {
+  width: 120px;
+  height: 2px;
+  background: #C9A356;
+  margin: 0 auto 25px auto;
+  opacity: 0.8;
+}
+
 /* ===== SERVICE COLLAPSE (Bootstrap-inspired) ===== */
 .service-collapse {
   max-height: 0;
@@ -181,7 +225,7 @@ body {
 /* ===== GALLERY GRID ===== */
 .wedding-gallery {
   padding: 4rem 2rem;
-  background-color: #F5F3E9;
+  background-color: #E7E0D6;
 }
 
 .gallery-grid {
