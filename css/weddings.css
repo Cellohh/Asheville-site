@@ -12,8 +12,9 @@ body {
 /* ===== HERO ===== */
 .wedding-hero img {
   width: 100%;
-  height: 90vh;
+  height: min(90vh, 900px);
   object-fit: cover;
+  display: block;
 }
 
 /* ===== INTRO ===== */
@@ -38,19 +39,21 @@ body {
   font-family: "aristelle-script", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 5rem;
+  font-size: clamp(2.5rem, 8vw, 5rem);
   margin-bottom: 2rem;
+  line-height: 1.1;
 }
 
 .intro-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: end; /* 🔑 aligns bottoms */
+  align-items: center;
 }
 
 .intro-copy p {
   text-align: right;
+  line-height: 1.8;
 }
 
 
@@ -63,12 +66,19 @@ body {
 
 .intro-video iframe {
   width: 100%;
+  aspect-ratio: 16 / 9;
   height: 300px;
+  border: none;
+}
+
+.cinematic-copy span {
+  display: block;
 }
 
 /* ===== SIGNATURE SERVICES ===== */
 .signature-services {
   position: relative;
+  overflow: visible;
   background: url("../assets/images/green_pattern.png") repeat;
   color: #F9F6EE;
   padding: 4rem 2rem;
@@ -79,7 +89,8 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 120px; /* keeps spacing consistent */
+  width: 120px;
+  flex-shrink: 0;
 }
 
 .service-wrap h3 {
@@ -91,10 +102,13 @@ body {
 
 .services-row {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: flex-start;
   gap: 3rem;
-  flex-wrap: wrap; /* helps on smaller screens */
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .service-item {
@@ -140,22 +154,30 @@ body {
 
 .service-flag {
   position: absolute;
-  top: calc(100% - 10px);
+  bottom: -18px;
 
   width: 0;
   height: 0;
+
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
   border-bottom: 18px solid #0077ff;
 
+  left: 0;
+
   transform: translateX(0);
-  transition: transform 0.25s ease-out;
-  will-change: transform;
+
+  transition:
+    transform 0.25s ease,
+    left 0.25s ease;
+
+  will-change: transform, left;
+  z-index: 5;
 }
 
 
 .service-blurb-section {
-  background: #F9F6EE;
+  background: #f5f3e9;
   padding: 2rem;
   text-align: center;
   font-size: 1rem;
@@ -216,7 +238,7 @@ body {
 }
 
 .service-collapse.show {
-  max-height: 200px; /* enough for text */
+  max-height: 500px;
   opacity: 1;
 }
 
@@ -225,7 +247,7 @@ body {
 /* ===== GALLERY GRID ===== */
 .wedding-gallery {
   padding: 4rem 2rem;
-  background-color: #E7E0D6;
+  background-color: #f5f3e9;
 }
 
 .gallery-grid {
@@ -280,3 +302,129 @@ body {
 }
 
 
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 992px) {
+
+  .wedding-hero img {
+    height: 70vh;
+  }
+
+  .wedding-intro {
+    padding: 3rem 1.5rem;
+  }
+
+  .intro-heading {
+    grid-column: auto;
+    text-align: center;
+  }
+
+  .intro-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .intro-copy p {
+    text-align: center;
+  }
+
+  .services-row {
+    gap: 2rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* smoother rendering during animations */
+
+[data-aos] {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 576px) {
+
+  .wedding-hero img {
+    height: 55vh;
+  }
+
+  .wedding-intro {
+    padding: 2rem 1rem;
+  }
+
+  .script-text {
+    text-align: center;
+  }
+
+  .intro-copy p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .cinematic-copy span {
+    display: inline;
+  }
+
+  .services-row {
+    gap: 1.5rem;
+  }
+
+  .service-wrap {
+    width: 90px;
+  }
+
+  .service-item {
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-wrap h3 {
+    font-size: 0.8rem;
+  }
+
+  .service-blurb-section {
+    padding: 2rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .planning-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img {
+    height: 240px;
+  }
+
+  .gallery-modal .arrow {
+    font-size: 2rem;
+  }
+
+  .arrow.left {
+    left: 15px;
+  }
+
+  .arrow.right {
+    right: 15px;
+  }
+
+  .gallery-modal .close {
+    top: 20px;
+    right: 20px;
+  }
+
+}

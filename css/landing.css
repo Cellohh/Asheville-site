@@ -10,6 +10,8 @@ body {
   font-weight: 400;
   font-style: normal;
   color: #111;
+  background-color: #f5f3e9;
+  overflow-x: hidden;
 }
 
 /* ===== HEADER ===== */
@@ -28,13 +30,14 @@ body {
   align-items: center;
   padding: 1rem 2rem;
   background: url("../assets/images/green_pattern.png") repeat;
-  /* background-color: #32412f; */
+  gap: 1rem;
 }
 
 .nav-left {
   display: flex;
   gap: 1.5rem;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .nav-left a {
@@ -45,6 +48,8 @@ body {
 
 .nav-logo img {
   height: 50px;
+  width: auto;
+  max-width: 100%;
 }
 
 .nav-right {
@@ -69,26 +74,41 @@ body {
 
 /* ===== MAIN OFFSET ===== */
 main {
-  padding-top: 120px;
+  padding-top: 110px;
 }
 
 /* ===== INTRO ===== */
 .intro-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
   padding: 4rem 2rem;
   gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.intro-image {
+  display: flex;
+  justify-content: center;
 }
 
 .intro-image img {
-  width: 55%;
-  margin-left: 20%;
+  width: 100%;
+  max-width: 450px;
+  margin-left: 0;
+  height: auto;
+}
+
+.cinematic-copy span {
+  display: block;
 }
 
 .bordered-box {
   position: relative;
   padding: 3rem;
-  width: 70%;
+  width: 100%;
+  max-width: 700px;
 }
 
 .bordered-box::before,
@@ -128,7 +148,8 @@ main {
 
 .service-card img {
   width: 100%;
-  /* height: 100%; modify to adjust height of weddings and corporate */
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
@@ -168,13 +189,15 @@ main {
 
 
 .partner-section img {
-  width: 30%;
+  width: 100%;
+  max-width: 400px;
 }
 
 .partner-section h2 {
   margin-bottom: 2rem;
   color: rgb(0, 63, 93);
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.4;
 }
 
 /* ===== GALLERY ===== */
@@ -203,9 +226,11 @@ main {
 
 .gallery-track img {
   width: 300px;
+  max-width: 70vw;
   filter: brightness(60%);
   transition: filter 0.3s ease;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .gallery-track img:hover {
@@ -225,12 +250,12 @@ main {
 /* ===== FOOTER ===== */
 .site-footer {
   display: grid;
-  height: 120px;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  padding: 0.50rem 2rem; /* was 3rem */
+  padding: 1rem 2rem;
   background: #4D4D4F;
   color: #F9F6EE;
+  gap: 2rem;
 }
 
 /* LEFT – SOCIALS */
@@ -321,3 +346,81 @@ main {
   cursor: pointer;
 }
 
+/* ========================================
+    gap: 1rem;
+  }
+
+  .footer-contact hr {
+    width: 60px;
+    height: 1px;
+    border-left: none;
+    border-top: 1px solid #FFD700;
+  }
+
+  .vertical-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+}
+
+/* ========================================
+   SMALL MOBILE DEVICES
+======================================== */
+
+@media (max-width: 576px) {
+
+  main {
+    padding-top: 160px;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-btn {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .intro-section {
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .cinematic-copy span {
+   display: inline;
+  }
+
+  .bordered-box {
+    padding: 1.5rem;
+  }
+
+  .partner-section h2 {
+    font-size: 1rem;
+  }
+
+  .gallery-track img {
+    width: 200px;
+  }
+
+  .gallery-modal .arrow {
+    font-size: 2rem;
+  }
+
+  .arrow.left {
+    left: 15px;
+  }
+
+  .arrow.right {
+    right: 15px;
+  }
+
+  .gallery-modal .close {
+    right: 20px;
+    top: 20px;
+  }
+
+}

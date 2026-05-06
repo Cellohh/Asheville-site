@@ -152,7 +152,7 @@ main {
 
 
 .service-blurb-section {
-  background: #F9F6EE;
+  background: #f5f3e9;
   padding: 2rem;
   text-align: center;
   font-size: 1rem;
@@ -174,12 +174,10 @@ main {
 }
 
 
-
-
 /* ===== GALLERY GRID ===== */
 .corp-gallery {
   padding: 4rem 2rem;
-  background-color: #E7E0D6;
+  background-color: #f5f3e9;
 }
 
 .gallery-grid {

@@ -10,17 +10,16 @@ const servicesRow = document.querySelector(".services-row");
 function moveFlag(btn) {
   if (!btn || !flag || !servicesRow) return;
 
-  const rect = btn.getBoundingClientRect();
-  const parentRect = servicesRow.getBoundingClientRect();
+  const btnRect = btn.getBoundingClientRect();
+  const rowRect = servicesRow.getBoundingClientRect();
 
   const x =
-    rect.left -
-    parentRect.left +
-    rect.width / 2 -
-    flag.offsetWidth / 2 +
-    20; // your right nudge
+    btnRect.left -
+    rowRect.left +
+    (btnRect.width / 2) -
+    12;
 
-  flag.style.transform = `translateX(${x}px)`;
+  flag.style.left = `${x}px`;
 }
 
 

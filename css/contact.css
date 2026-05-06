@@ -11,6 +11,7 @@ body {
   font-weight: 400;
   font-style: normal;
   color: #111;
+  background-color: #f5f3e9;
 }
 
 /* ===== CONTACT SECTION ===== */
@@ -20,6 +21,7 @@ body {
   gap: 4rem;
   padding: 4rem 2rem;
   align-items: start;
+  background-color: #f5f3e9;
 }
 
 /* LEFT SIDE */
